@@ -23,3 +23,5 @@ jobs:
         publish_dir: ./build
         publish_branch: main
         force_orphan: true
+      env:
+        PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
