@@ -1,21 +1,33 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
-        </a>
+    <div className="min-h-screen ocean-waves flex items-center justify-center">
+      <div className="text-center space-y-8">
+        <div>
+          <h1 className="text-6xl font-bold text-treasure-gold mb-4">404</h1>
+          <h2 className="text-2xl text-parchment mb-4">Treasure Not Found</h2>
+          <p className="text-xl text-parchment/80 max-w-md mx-auto leading-relaxed">
+            The treasure you seek has been lost to the depths of the ocean. 
+            Perhaps it was never here to begin with.
+          </p>
+        </div>
+        
+        <Button 
+          onClick={() => navigate('/')}
+          className="bg-treasure-gold text-wood-dark hover:bg-treasure-gold-light font-semibold px-8 py-3"
+        >
+          Return to Treasure Map
+        </Button>
       </div>
     </div>
   );

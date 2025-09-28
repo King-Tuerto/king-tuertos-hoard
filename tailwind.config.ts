@@ -57,6 +57,28 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Treasure theme colors
+        treasure: {
+          gold: "hsl(var(--treasure-gold))",
+          "gold-light": "hsl(var(--treasure-gold-light))",
+          "gold-dark": "hsl(var(--treasure-gold-dark))",
+        },
+        ocean: {
+          deep: "hsl(var(--ocean-deep))",
+          medium: "hsl(var(--ocean-medium))",
+          light: "hsl(var(--ocean-light))",
+        },
+        parchment: {
+          DEFAULT: "hsl(var(--parchment))",
+          dark: "hsl(var(--parchment-dark))",
+        },
+        wood: {
+          dark: "hsl(var(--wood-dark))",
+          medium: "hsl(var(--wood-medium))",
+        },
+        emerald: {
+          accent: "hsl(var(--emerald-accent))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
