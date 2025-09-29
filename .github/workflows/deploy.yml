@@ -1,16 +1,14 @@
-name: Deploy to GitHub Pages
+name: Deploy React to GitHub Pages
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
@@ -19,11 +17,8 @@ jobs:
       run: npm install
     - name: Build
       run: npm run build
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
-        publish_branch: gh-pages
-        force_orphan: true
-        commit_message: 'Deploy to gh-pages'
+        branch: gh-pages
+        folder: build
